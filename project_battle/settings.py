@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Action',
-    'User',
+    'Authentication',
     'widget_tweaks',
-    'ckeditor'
+    'ckeditor',
+    'Chat'
 ]
 
 MIDDLEWARE = [
@@ -133,7 +134,7 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
 
 
-AUTH_USER_MODEL = 'Authentication.User'
+# AUTH_USER_MODEL = 'Authentication.User'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
