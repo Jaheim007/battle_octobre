@@ -12,7 +12,7 @@ class Food_Categories(RepeatFields):
 class Food(RepeatFields):
     name = models.CharField(max_length=150)
     image = models.ImageField(upload_to="Food_Images")
-    category = models.ForeignKey(Food_Categories , on_delete=models.SET_NULL , related_name='category')
+    category = models.ForeignKey(Food_Categories , on_delete=models.SET_NULL ,null=True, related_name='category')
     description = RichTextField(blank=True , null=True)
     ingredients = RichTextField(blank=True , null=True)
     
