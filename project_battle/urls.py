@@ -10,7 +10,7 @@ from front.views import ContactView, HomeView, SingleView , SignUp , Login , Log
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',HomeView.as_view(), name='home'),
-    path('single/',SingleView.as_view(), name='single'),
+    path('single/<int:details>/',SingleView.as_view(), name='single'),
     path('contact/', ContactView.as_view(), name='contact'),
     path('signup/', SignUp.as_view(), name='signup'),
     path('login/', Login.as_view(), name='login'),

@@ -5,12 +5,14 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages #import messages
 # Create your views here.
 from Authentication.forms import NewUserForm , LoginForm 
+from Action import models
 
 
 class HomeView(View):
     template_name = 'page/home.html'
     
     def get(self,request):
+        foods = models.Food.objects.all()
         return render(request, self.template_name, locals())
     
 
@@ -83,3 +85,11 @@ class Logout(View):
     def get(self , request):
        logout(request)
        return redirect("/") 
+   
+   
+class Single(View):
+    template_name = 'page/single-post.html'
+    
+    def get(self , request ,details):
+        food = models.Food.objects.get(id=details)
+        return render(request , self.template_name , locals())
