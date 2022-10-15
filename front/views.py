@@ -17,10 +17,11 @@ class HomeView(View):
     
 
 class SingleView(View):
-    template_name = "page/single-post.html"
+    template_name = 'page/single-post.html'
     
-    def get(self,request):
-        return render(request, self.template_name, locals())
+    def get(self,request,details):
+        food = models.Food.objects.get(id=details)
+        return render(request , self.template_name , locals())
 
 class ContactView(View):
     template_name = "page/contact.html"
@@ -87,9 +88,3 @@ class Logout(View):
        return redirect("/") 
    
    
-class Single(View):
-    template_name = 'page/single-post.html'
-    
-    def get(self , request ,details):
-        food = models.Food.objects.get(id=details)
-        return render(request , self.template_name , locals())
