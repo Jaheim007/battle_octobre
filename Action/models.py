@@ -15,6 +15,7 @@ class Food(RepeatFields):
     category = models.ForeignKey(Food_Categories , on_delete=models.SET_NULL, null=True , related_name='category')
     description = RichTextField(blank=True , null=True)
     ingredients = RichTextField(blank=True , null=True)
+    description_food = RichTextField(blank=True , null=True)
     
     
     
