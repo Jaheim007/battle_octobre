@@ -8,3 +8,6 @@ class RepeatFields(models.Model):
     
 class User(AbstractUser , RepeatFields):
     image = models.ImageField(upload_to="User_Image")
+    
+    def __str__(self):
+        return self.username
